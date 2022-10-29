@@ -7,6 +7,7 @@ import 'colors';
 import connectDB from './config/db.js';
 import errorHandler from './middleware/errorHandler.js';
 import userRoutes from './routes/userRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 
 const PORT = process.env.PORT || 5000;
 const app = express();
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // ROUTES
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/auth', authRoutes);
 
 // ERROR HANDLER
 app.use(errorHandler);
