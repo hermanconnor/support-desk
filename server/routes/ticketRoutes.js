@@ -8,8 +8,12 @@ import {
   updateTicket,
   deleteTicket,
 } from '../controllers/ticketController.js';
+import noteRouter from './noteRoutes.js';
 
 const router = express.Router();
+
+// Re-route into note router
+router.use('/:ticketId/notes', noteRouter);
 
 router.route('/').get(authHandler, getTickets).post(authHandler, createTicket);
 

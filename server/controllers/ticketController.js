@@ -35,7 +35,7 @@ const getTicket = async (req, res) => {
     throw new Error('Ticket not found');
   }
 
-  if (ticket.user.toString() !== user._id.toString()) {
+  if (ticket.user.toString() !== req.user.userId) {
     res.status(403);
     throw new Error('Forbidden');
   }
