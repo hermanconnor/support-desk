@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Register from './pages/Register';
 import Login from './pages/Login';
@@ -8,8 +10,7 @@ import Layout from './components/Layout';
 import NewTicket from './pages/NewTicket';
 import PrivateRoutes from './components/PrivateRoutes';
 import UserLoggedIn from './components/UserLoggedIn';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Tickets from './pages/Tickets';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
 
           <Route element={<PrivateRoutes />}>
             <Route path='new-ticket' element={<NewTicket />} />
+            <Route path='tickets' element={<Tickets />} />
           </Route>
         </Route>
 
