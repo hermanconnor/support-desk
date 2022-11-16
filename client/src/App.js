@@ -11,6 +11,7 @@ import NewTicket from './pages/NewTicket';
 import PrivateRoutes from './components/PrivateRoutes';
 import UserLoggedIn from './components/UserLoggedIn';
 import Tickets from './pages/Tickets';
+import Ticket from './pages/Ticket';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route element={<PrivateRoutes />}>
             <Route path='new-ticket' element={<NewTicket />} />
             <Route path='tickets' element={<Tickets />} />
+            <Route path='ticket/:ticketId' element={<Ticket />} />
           </Route>
         </Route>
 
